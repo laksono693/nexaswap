@@ -1,11 +1,11 @@
-import React from "react";
-import "./App.css";
+import React from 'react';
+import Swap from './components/Swap';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <h1>NexaSwap</h1>
-      <p>Welcome to the DEX on Nexus Testnet</p>
+      <Swap />
     </div>
   );
 }
