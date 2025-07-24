@@ -7,22 +7,18 @@ function App() {
   const [block, setBlock] = useState(null);
 
   useEffect(() => {
-    const getBlock = async () => {
-      try {
-        const latestBlock = await provider.getBlockNumber();
-        setBlock(latestBlock);
-      } catch (err) {
-        console.error("Error fetching block:", err);
-      }
+    const fetchBlock = async () => {
+      const latest = await provider.getBlockNumber();
+      setBlock(latest);
     };
-    getBlock();
+    fetchBlock();
   }, []);
 
   return (
     <div style={{ padding: "2rem", fontFamily: "Arial", color: "#333" }}>
       <h1>NexaSwap - Welcome to the DEX</h1>
-      <p>Connected to Nexus Testnet 3</p>
-      <p>Latest Block: {block !== null ? block : "Loading..."}</p>
+      <p>Connected to Nexus Testnet</p>
+      <p>Latest Block: {block ?? "Loading..."}</p>
     </div>
   );
 }
