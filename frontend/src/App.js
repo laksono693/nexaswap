@@ -1,11 +1,13 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
-import "./index.css";
+import "./App.css";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+function App() {
+  return (
+    <div className="App">
+      <h1>NexaSwap</h1>
+      <p>Welcome to the DEX on Nexus Testnet</p>
+    </div>
+  );
+}
+
+export default App;
